@@ -7,3 +7,7 @@ def front_index(request):
 
 def front_about(request):
     return render(request,'front/about-us.html',{})
+
+
+def front_contact(request):
+    return render(request,'front/contact-us.html',{})
