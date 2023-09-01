@@ -10,7 +10,6 @@ urlpatterns = [
     path("",include('customer.urls')),
     path("",include('master.urls')),
     path("",include('news.urls')),
-
 ]
 
 urlpatterns+=[
