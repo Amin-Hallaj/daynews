@@ -9,6 +9,7 @@ urlpatterns = [
     path("",include('master.urls')),
     path("",include('customer.urls')),
     path("",include('master.urls')),
+    path("",include('news.urls')),
 
 ]
 
