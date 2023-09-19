@@ -20,7 +20,5 @@ class Main(models.Model):
     seo_text=models.CharField(max_length=500 , null=True , blank=True)
     seo_keywords=models.TextField(null=True , blank=True)
 
-
-
     def __str__(self):
         return f"{self.name_site} | {self.pk}"
