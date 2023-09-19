@@ -9,5 +9,9 @@ def master_login(request):
     return render(request,'master/login.html',{})
 
 
-def master_settings(request):
+def master_login_submit(request):
+    return redirect('master_login')
+
+
+def master_logout(request):
     return redirect('master_login')
