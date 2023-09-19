@@ -11,7 +11,16 @@ class Main(models.Model):
     whatsapp=models.CharField(max_length=100)
     copyright=models.CharField(max_length=100)
     number=models.IntegerField()
-    
+    icon_name_header=models.TextField(null=True , blank=True)
+    icon_url_header=models.TextField(null=True , blank=True)
+    icon_name_footer=models.TextField(null=True , blank=True)
+    icon_url_footer=models.TextField(null=True , blank=True)
+    favicon_name=models.TextField(null=True , blank=True)
+    favicon_url=models.TextField(null=True , blank=True)
+    seo_text=models.CharField(max_length=500 , null=True , blank=True)
+    seo_keywords=models.TextField(null=True , blank=True)
+
+
 
     def __str__(self):
         return f"{self.name_site} | {self.pk}"
