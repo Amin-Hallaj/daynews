@@ -10,6 +10,7 @@ class Main(models.Model):
     telegram=models.CharField(max_length=100)
     whatsapp=models.CharField(max_length=100)
     copyright=models.CharField(max_length=100)
+    number=models.IntegerField()
     
 
     def __str__(self):
