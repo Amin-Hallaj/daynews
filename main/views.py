@@ -6,8 +6,8 @@ def master_settings(request):
 
 
 def master_login(request):
-    return render(request,'master/settings.html',{})
+    return render(request,'master/login.html',{})
 
 
 def master_settings(request):
-    return render(request,'master/settings.html',{})
+    return redirect('master_login')
