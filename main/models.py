@@ -9,6 +9,8 @@ class Main(models.Model):
     instagram=models.CharField(max_length=100)
     telegram=models.CharField(max_length=100)
     whatsapp=models.CharField(max_length=100)
+    copyright=models.CharField(max_length=100)
+    
 
     def __str__(self):
         return f"{self.name_site} | {self.pk}"
