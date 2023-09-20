@@ -134,14 +134,14 @@
 				<li class="nav-item h5">
 					<a class="nav-link" href="{% url 'front_about' %}">درباره ما</a>
 				</li>
-				<li class="nav-item h5">
+				{% comment %} <li class="nav-item h5">
 					<a class="nav-link" href="post-grid.html">خواندنی ها</a>
-				</li>
+				</li> {% endcomment %}
 				<li class="nav-item h5">
-					<a class="nav-link" href="contact-us.html">تماس با ما</a>
+					<a class="nav-link" href="{% url 'front_contact' %}">تماس با ما</a>
 				</li>
                 <li class="nav-item h5">
-					<a class="nav-link" href="contact-us.html">نویسنده</a>
+					<a class="nav-link" href="{% url 'front_author' %}">نویسنده</a>
 				</li>
                 
 			</ul>
