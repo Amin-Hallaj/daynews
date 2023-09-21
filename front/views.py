@@ -1,8 +1,13 @@
 from django.shortcuts import render , redirect , get_object_or_404
+from main.models import Main
+from news.models import News
 
 
 def front_index(request):
-    return render(request,'front/index.html',{})
+
+    show_news=News.objects.all()
+
+    return render(request,'front/index.html',{'show_news':show_news})
 
 
 def front_about(request):
