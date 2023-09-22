@@ -4,8 +4,8 @@
 <html lang="fa" dir="rtl">
 
 <head>
-	<title>Blogzine - قالب HTML مجله خبری و وبلاگ</title>
-
+	{% block headtitle %}
+    {% endblock headtitle %}
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -241,19 +241,13 @@ Header START -->
 
 					<ul class="nav">
 						<li class="nav-item">
-							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-facebook-square"></i></a>
+							<a class="nav-link px-2 fs-5" href="{{site_head.telegram}}"><i class="fab fa-telegram"></i></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-twitter-square"></i></a>
+							<a class="nav-link px-2 fs-5" href="{{site_head.whatsapp}}"><i class="fab fa-whatsapp"></i></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-linkedin"></i></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-youtube-square"></i></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link ps-2 pe-0 fs-5" href="#"><i class="fab fa-vimeo"></i></a>
+							<a class="nav-link px-2 fs-5" href="{{site_head.instagram}}"><i class="fab fa-instagram"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -520,11 +514,9 @@ Footer START -->
 			<div class="col-sm-6 col-lg-3 mb-4">
 				<h5 class="mb-4 text-white">دریافت بروزسانی ها</h5>
 				<ul class="nav flex-column text-primary-hover">
-					<li class="nav-item"><a class="nav-link pt-0" href="#"><i class="fab fa-whatsapp fa-fw me-2"></i>واتساپ</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-youtube fa-fw me-2"></i>یوتیوب</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"><i class="far fa-bell fa-fw me-2"></i>وب سایت</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"><i class="far fa-envelope fa-fw me-2"></i>خبرنامه</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-headphones-alt fa-fw me-2"></i>پادکست</a></li>
+					<li class="nav-item"><a class="nav-link pt-0" href="{{site_head.whatsapp}}"><i class="fab fa-whatsapp fa-fw me-2">واتس‌آپ</i></a></li>
+					<li class="nav-item"><a class="nav-link" href="{{site_head.telegram}}"><i class="fab fa-telegram fa-fw me-2">تلگرام</i></a></li>
+					<li class="nav-item"><a class="nav-link" href="{{site_head.instagram}}"><i class="far fa-instagram fa-fw me-2">اینستاگرام</i></a></li>
 				</ul>
 			</div>
 
@@ -580,7 +572,7 @@ Footer START -->
 			<div class="row align-items-center justify-content-md-between py-4">
 				<div class="col-md-6">
 					<!-- Copyright -->
-					<div class="text-center text-md-start text-primary-hover text-muted">©2022 ارائه شده در سایت <a href="https://www.rtl-theme.com/" class="text-reset btn-link" target="_blank">راست چین</a>
+					<div class="text-center text-md-start text-primary-hover text-muted">{{site_head.copyright}}<a href="https://www.rtl-theme.com/" class="text-reset btn-link" target="_blank"></a>
 					</div>
 				</div>
 				<div class="col-md-6 d-sm-flex align-items-center justify-content-center justify-content-md-end">

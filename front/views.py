@@ -5,9 +5,10 @@ from news.models import News
 
 def front_index(request):
 
+    site_head=Main.objects.get()
     show_news=News.objects.all()
 
-    return render(request,'front/index.html',{'show_news':show_news})
+    return render(request,'front/index.html',{'show_news':show_news , "site_head":site_head})
 
 
 def front_about(request):
