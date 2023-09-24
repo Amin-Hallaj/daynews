@@ -17,20 +17,12 @@ def master_dashboard_edit_profile(request):
     return render(request,'master/dashboard-edit-profile.html',{})
 
 
-def master_dashboard_post_create(request):
-    return render(request,'master/dashboard-post-create.html',{})
-
-
 def master_dashboard_author_list(request):
     return render(request,'master/dashboard-author-list.html',{})
 
 
 def master_dashboard_author_single(request):
     return render(request,'master/dashboard-author-single.html',{})
-
-
-def master_dashboard_post_edit(request):
-    return render(request,'master/dashboard-post-edit.html',{})
 
 
 def master_dashboard_reviews(request):

@@ -18,14 +18,15 @@ Main contain START -->
 					<!-- Card body -->
 					<div class="card-body">
             <!-- Form START -->
-            <form>
+            <form action="{% url 'master_dashboard_post_create_submit' %}" id="news_add" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
               <!-- Main form -->
               <div class="row">
                 <div class="col-12">
                   <!-- Post name -->
                   <div class="mb-3">
                     <label class="form-label">عنوان</label>
-                    <input required id="con-name" name="name" type="text" class="form-control" placeholder="عنوان خبر">
+                    <input required id="news_titel" name="news_titel" type="text" class="form-control" placeholder="عنوان خبر">
                     <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</small>
                   </div>
                 </div>
@@ -36,50 +37,10 @@ Main contain START -->
                     <div class="d-flex flex-wrap gap-3">
                       <!-- Post type item -->
                       <div class="flex-fill">
-                        <input type="radio" class="btn-check" name="poll" id="option">
-                        <label class="btn btn-outline-light w-100" for="option">
-                          <i class="bi bi-chat-left-text fs-1"></i>
-                          <span class="d-block"> فوری</span>
-                        </label>
-                      </div>
-                      <!-- Post type item -->
-                      <div class="flex-fill">
-                        <input type="radio" class="btn-check" name="poll" id="option2">
-                        <label class="btn btn-outline-light w-100" for="option2">
-                            <i class="bi bi-patch-question fs-1"></i>
-                          <span class="d-block"> حوادث </span>
-                        </label>
-                      </div>
-                      <!-- Post type item -->
-                      <div class="flex-fill">
                         <input type="radio" class="btn-check" name="poll" id="option3" checked>
                         <label class="btn btn-outline-light w-100" for="option3">
                           <i class="bi bi-chat-right-dots fs-1"></i>
                           <span class="d-block"> خبری </span>
-                        </label>
-                      </div>
-                      <!-- Post type item -->
-                      <div class="flex-fill">
-                        <input type="radio" class="btn-check" name="poll" id="option4">
-                        <label class="btn btn-outline-light w-100" for="option4">
-                          <i class="bi bi-ui-checks-grid fs-1"></i>
-                          <span class="d-block"> متنی </span>
-                        </label>
-                      </div>
-                      <!-- Post type item -->
-                      <div class="flex-fill">
-                        <input type="radio" class="btn-check" name="poll" id="option5">
-                        <label class="btn btn-outline-light w-100" for="option5">
-                          <i class="bi bi-camera-reels fs-1"></i>
-                          <span class="d-block"> چندرسانه ای </span>
-                        </label>
-                      </div>
-                      <!-- Post type item -->
-                      <div class="flex-fill">
-                        <input type="radio" class="btn-check" name="poll" id="option6">
-                        <label class="btn btn-outline-light w-100" for="option6">
-                          <i class="bi bi-chat-square fs-1"></i>
-                          <span class="d-block"> سایر </span>
                         </label>
                       </div>
                     <!-- Post type item -->
@@ -91,8 +52,8 @@ Main contain START -->
               <!-- Short description -->
               <div class="col-12">
                 <div class="mb-3">
-                    <label class="form-label">توضیح مختصر</label>
-                    <textarea class="form-control" rows="3" placeholder="توضیح مختصری را درباره خبر بنویسید..."></textarea>
+                    <label class="form-label">توضیح مختصر</label>brief
+                    <textarea class="form-control" id="news_brief" name="news_brief" rows="3" placeholder="توضیح مختصری را درباره خبر بنویسید..."></textarea>
                 </div>
               </div>
 
@@ -101,7 +62,7 @@ Main contain START -->
                   <!-- Subject -->
                   <div class="mb-3">
                     <label class="form-label">متن خبر</label>
-                    <textarea class="form-control" id="newstext" name="newstext" rows="3"></textarea>
+                    <textarea class="form-control" id="news_text" name="news_text" rows="3"></textarea>
                     <!-- Editor toolbar -->
                       <div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
                         <span class="ql-formats">

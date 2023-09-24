@@ -171,9 +171,9 @@ Main content START -->
 				</div>
 				<div class="row gy-4">
 					<!-- Card item START -->
+					{% for news in show_news %}
 					<div class="col-sm-6">
 						<div class="card">
-							{% for news in show_news %}
 							<!-- Card img -->
 							<div class="position-relative">
 								<img class="card-img" src="{% static 'front/' %}assets/images/blog/4by3/01.jpg" alt="Card image">
@@ -207,9 +207,9 @@ Main content START -->
 									<li class="nav-item">{{news.news_date}}</li>
 								</ul>
 							</div>
-							{% endfor %}
 						</div>
 					</div>
+					{% endfor %}
 					<!-- Card item END -->
 					<!-- Load more START -->
 					<div class="col-12 text-center mt-5">
