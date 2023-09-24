@@ -31,8 +31,11 @@ def front_post_list(request):
     return render(request,'front/post-list.html',{})
 
 
-def front_post_single(request):
-    return render(request,'front/post-single.html',{})
+def front_post_single(request,word):
+
+    post_single=News.objects.get(title=word)
+    
+    return render(request,'front/post-single.html',{'post_single':post_single,'word':word})
 
 
 def front_search_result(request):
