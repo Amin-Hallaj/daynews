@@ -104,13 +104,11 @@ Main contain START -->
                   <div class="mb-3">
                   <!-- Image -->
                   <div class="position-relative">
-                    <h6 class="my-2">آپلود تصویر شاخص<a href="#!" class="text-primary"> آپلود از کامپیوتر</a></h6>
 				          <label class="w-100" style="cursor:pointer;">
                       <div class="input-group flex-row-reverse">
-                              <input type="text" class="form-control upload-name"/>
-                              <span class="btn btn-custom cursor-pointer upload-button">آپلود فایل</span>
+                              <input type="file" id="image_news" name="image_news" class="form-control upload-name" required/>
                       </div> 
-                      <input class="form-control stretched-link d-none hidden-upload" type="file" name="my-image" accept="image/gif, image/jpeg, image/png"/>
+                      {% comment %} <input class="form-control stretched-link d-none hidden-upload" type="file" name="my-image" accept="image/gif, image/jpeg, image/png"/> {% endcomment %}
 										</label>
                   </div>
                   <p class="small mb-0 mt-2"><b>نکته:</b> فرمت های مجاز: JPG، JPEG و PNG و ابعاد پیشنهادی ما 600px * 450px است. تصاویر بزرگتر به اندازه 4:3 برش داده می شود تا با تصاویر کوچک/پیش نمایش ما مطابقت داشته باشد.</p>
