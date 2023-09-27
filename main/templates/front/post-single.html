@@ -4,7 +4,7 @@
 
 <!-- =======================
 Inner intro START -->
-<section class="bg-dark-overlay-4" style="background-image:url({% static 'front/' %}assets/images/blog/16by9/big/02.jpg); background-position: center left; background-size: cover;">
+<section class="bg-dark-overlay-4" style="background-image:url({{post_single.picurl}}); background-position: center left; background-size: cover;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 py-md-5 my-lg-5">
@@ -33,27 +33,17 @@ Inner intro START -->
 					<ul class="nav text-white-force">
 						<li class="nav-item">
 							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-facebook" href="#">
-								<i class="fab fa-facebook-square align-middle"></i>
+								<i class="fab fa-telegram align-middle"></i>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-twitter" href="#">
-								<i class="fab fa-twitter-square align-middle"></i>
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-success" href="#">
+								<i class="fab fa-whatsapp align-middle"></i>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-linkedin" href="#">
-								<i class="fab fa-linkedin align-middle"></i>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-pinterest" href="#">
-								<i class="fab fa-pinterest align-middle"></i>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-primary" href="#">
-								<i class="far fa-envelope align-middle"></i>
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-instagram" href="#">
+								<i class="fab fa-instagram align-middle"></i>
 							</a>
 						</li>
 					</ul>
@@ -123,7 +113,7 @@ Main START -->
 					<div>
 						<div class="d-sm-flex align-items-center justify-content-between">
 							<div>
-								<h4 class="m-0"><a href="#" class="text-reset">مریم حسینی</a></h4>
+								<h4 class="m-0"><a href="#" class="text-reset">{{post_single.writer}}</a></h4>
 								<small>روزنامه نگار سایت Blogzine</small>
 							</div>
 							<a href="#" class="btn btn-xs btn-primary-soft">مشاهده اخبار</a>
@@ -132,13 +122,13 @@ Main START -->
 						<!-- Social icons -->
 						<ul class="nav">
 							<li class="nav-item">
-								<a class="nav-link ps-0 pe-2 fs-5" href="#"><i class="fab fa-facebook-square"></i></a>
+								<a class="nav-link ps-0 pe-2 fs-5" href="#"><i class="fab fa-telegram"></i></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-twitter-square"></i></a>
+								<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-whatsapp"></i></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-linkedin"></i></a>
+								<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-instagram"></i></a>
 							</li>
 						</ul>					
 					</div>
@@ -147,7 +137,7 @@ Main START -->
 
 				<!-- Comments START -->
 				<div class="mt-5">
-					<h3>5 دیدگاه</h3>
+					{% comment %} <h3>5 دیدگاه</h3>
 					<!-- Comment level 1-->
 					<div class="my-4 d-flex">
 					  <img class="avatar avatar-md rounded-circle float-start me-3" src="{% static 'front/' %}assets/images/avatar/01.jpg" alt="avatar">
@@ -207,7 +197,7 @@ Main START -->
 					    </div>
 					    <p>ما تا آنجا که ممکن است، با علاقه فراوان و دلواپسی زیاد به زندگی ادامه می دهیم، همان‌ طور که تا آنجا که ممکن است طولانی‌ تر در یک حباب صابون می‌ دمیم تا بزرگتر شود، گر چه با قطعیتی تمام می‌ دانیم که خواهد ترکید.</p>
 					  </div>
-					</div>
+					</div> {% endcomment %}
 
 				</div>
 				<!-- Comments END -->
