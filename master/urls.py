@@ -10,4 +10,5 @@ urlpatterns = [
     path('dashboard/edit/profile/',views.master_dashboard_edit_profile,name='master_dashboard_edit_profile'),
     path('dashboard/reviews/',views.master_dashboard_reviews,name='master_dashboard_reviews'),
     path('dashboard/settings/',views.master_dashboard_settings,name='master_dashboard_settings'),
+    path('dashboard/delete/<id>/', views.master_news_delete, name='master_news_delete'),
 ]

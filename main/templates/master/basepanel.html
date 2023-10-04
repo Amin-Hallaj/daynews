@@ -122,10 +122,10 @@ Header START -->
 						<a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-pencil me-1"></i>اخبار</a>
 						<ul class="dropdown-menu" aria-labelledby="postMenu">
 							<!-- dropdown submenu -->
+							<li> <a class="dropdown-item" href="{% url 'master_dashboard_post_create' %}">ایجاد</a> </li>
 							<li> <a class="dropdown-item" href="{% url 'master_dashboard_post_list' %}">لیست</a> </li>
 							<li> <a class="dropdown-item" href="{% url 'master_dashboard_post_categories' %}">دسته بندی</a> </li>
-							<li> <a class="dropdown-item" href="{% url 'master_dashboard_post_create' %}">ایجاد</a> </li>
-							<li> <a class="dropdown-item" href="{% url 'master_dashboard_post_edit' %}">ویرایش</a> </li>
+							{% comment %} <li> <a class="dropdown-item" href="{% url 'master_dashboard_post_edit' %}">ویرایش</a> </li> {% endcomment %}
 						</ul>
 					</li>
 
