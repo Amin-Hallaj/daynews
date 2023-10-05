@@ -14,6 +14,9 @@ class News(models.Model):
     picname = models.TextField(null=True , blank=True)
     picurl = models.TextField(null=True , blank=True,)
     news_date = models.FloatField()
+    news_category=models.ForeignKey("Category",on_delete=models.CASCADE,related_name="news",null=True , blank=True)
+    news_subcategory=models.ForeignKey("SubCategory",on_delete=models.CASCADE,related_name="news",null=True , blank=True)
+
 
     def __str__(self):
         return f"{self.writer} | {self.title}"
@@ -21,3 +24,18 @@ class News(models.Model):
     @property
     def jdate(self):
         return  jdatetime.datetime.fromtimestamp(self.news_date).strftime("%H:%M:%S %Y/%m/%d")
+
+
+class Category(models.Model):
+    category=models.CharField(max_length=500)
+
+    def __str__(self):
+        return f"{self.category}"
+    
+    
+class SubCategory(models.Model):
+    sub_category=models.CharField(max_length=500)
+    category=models.ForeignKey("Category",on_delete=models.CASCADE,related_name="subcategory")
+
+    def __str__(self):
+        return f"{self.sub_category} | {self.category}"
