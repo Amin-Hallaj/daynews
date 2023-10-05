@@ -27,14 +27,14 @@ class News(models.Model):
 
 
 class Category(models.Model):
-    category=models.CharField(max_length=500)
+    name=models.CharField(max_length=500)
 
     def __str__(self):
         return f"{self.category}"
     
     
 class SubCategory(models.Model):
-    sub_category=models.CharField(max_length=500)
+    name_sub=models.CharField(max_length=500)
     category=models.ForeignKey("Category",on_delete=models.CASCADE,related_name="subcategory")
 
     def __str__(self):
