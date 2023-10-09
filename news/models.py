@@ -30,7 +30,7 @@ class Category(models.Model):
     name=models.CharField(max_length=500)
 
     def __str__(self):
-        return f"{self.category}"
+        return f"{self.name}"
     
     
 class SubCategory(models.Model):
@@ -38,4 +38,4 @@ class SubCategory(models.Model):
     category=models.ForeignKey("Category",on_delete=models.CASCADE,related_name="subcategory")
 
     def __str__(self):
-        return f"{self.sub_category} | {self.category}"
+        return f"{self.name_sub} | {self.category}"

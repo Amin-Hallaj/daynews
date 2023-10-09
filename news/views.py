@@ -5,11 +5,14 @@ from django.core.files.storage import FileSystemStorage
 from main.func.public import upload_files
 from django.contrib import messages
 from main.models import Main
-from news.models import News
+from news.models import News,Category,SubCategory
 
 
 def master_dashboard_post_create(request):
-    return render(request,'master/dashboard-post-create.html',{})
+
+    category_news=News.objects.all()
+
+    return render(request,'master/dashboard-post-create.html',{'category_news':category_news})
 
 
 def master_dashboard_post_create_submit(request):
@@ -18,6 +21,7 @@ def master_dashboard_post_create_submit(request):
         news_titel=request.POST.get('news_titel')
         news_brief=request.POST.get('news_brief')
         news_text=request.POST.get('news_text')
+        news_category=request.POST.get('news_category')
         
         if news_titel == "" or news_brief == "" or news_text == "" :
             messages.error(request, 'لطفا تمامی فیلد ها را پر کنید')
@@ -43,6 +47,7 @@ def master_dashboard_post_create_submit(request):
                 picname=filename,
                 picurl=url,
                 news_date=time.time(),
+                news_subcategory=news_category,
             )
         
     return redirect("master_dashboard_post_list")

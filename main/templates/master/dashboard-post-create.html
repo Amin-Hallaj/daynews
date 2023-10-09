@@ -125,14 +125,11 @@ Main contain START -->
                 <div class="col-lg-5">
                   <!-- Message -->
                   <div class="mb-3">
-                    <label class="form-label">دسته بندی</label>
+                    <label class="form-label" id='news_category'>دسته بندی</label>
                     <select class="form-select" aria-label="Default select example">
-                      <option selected>اقتصاد</option>
-                      <option value="1">تکنولوژی</option>
-                      <option value="2">رسانه</option>
-                      <option value="3">گردشگری</option>
-                      <option value="4">ورزش</option>
-                      <option value="5">سیاست</option>
+                      {% for category_news in category_news %}
+                      <option value="{{category_news.id}}">{{category_news.news_subcategory}}</option>
+                      {% endfor %}
                     </select>
                   </div>
                 </div>
