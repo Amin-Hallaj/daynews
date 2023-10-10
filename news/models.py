@@ -3,7 +3,6 @@ from django.db import models
 import jdatetime
 from django.contrib.auth.models import  User , Permission
 
-
 class News(models.Model):
     writer=models.ForeignKey(User, on_delete=models.CASCADE, related_name="news")
     title=models.CharField(max_length=500)
@@ -16,6 +15,7 @@ class News(models.Model):
     news_date = models.FloatField()
     news_category=models.ForeignKey("Category",on_delete=models.CASCADE,related_name="news",null=True , blank=True)
     news_subcategory=models.ForeignKey("SubCategory",on_delete=models.CASCADE,related_name="news",null=True , blank=True)
+    slider=models.BooleanField(default=False)
 
 
     def __str__(self):

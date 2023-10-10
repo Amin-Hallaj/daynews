@@ -7,8 +7,9 @@ def front_index(request):
 
     site_head=Main.objects.get()
     show_news=News.objects.all().order_by('-pk')
+    slider_news=News.objects.filter(slider=True)[:4]
 
-    return render(request,'front/index.html',{'show_news':show_news , "site_head":site_head})
+    return render(request,'front/index.html',{'show_news':show_news , "site_head":site_head,'slider_news':slider_news})
 
 
 def front_about(request):
