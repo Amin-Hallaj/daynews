@@ -75,11 +75,12 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'master/' %}assets/vendor/font-awesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'master/' %}assets/vendor/bootstrap-icons/bootstrap-icons.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'master/' %}assets/vendor/apexcharts/css/apexcharts.css">
-	<link rel="stylesheet" type="text/css" href="{% static 'master/' %}assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'master/' %}assets/vendor/quill/css/quill.snow.css">
 
 	<!-- Theme CSS -->
 	<link id="style-switch" rel="stylesheet" type="text/css" href="{% static 'master/' %}assets/css/style-rtl.css">
-	 
+	{% block ckeditor %}
+	{% endblock ckeditor %}
 </head>
 
 <body>
@@ -363,8 +364,7 @@ JS libraries, plugins and custom scripts -->
 <!-- Template Functions -->
 <script src="{% static 'master/' %}assets/js/functions.js"></script>
 
-{% block ckeditor %}
-{% endblock ckeditor %}
+
 </body>
 
 </html>

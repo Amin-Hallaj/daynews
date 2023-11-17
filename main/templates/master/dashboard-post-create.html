@@ -64,7 +64,7 @@ Main contain START -->
                     <label class="form-label">متن خبر</label>
                     <textarea class="form-control" id="news_text" name="news_text" rows="3"></textarea>
                     <!-- Editor toolbar -->
-                      <div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
+                      {% comment %} <div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
                         <span class="ql-formats">
                           <select class="ql-size"></select>
                         </span>
@@ -94,10 +94,10 @@ Main contain START -->
                         <span class="ql-formats">
                           <button class="ql-clean"></button>
                         </span>
-                      </div>
+                      </div> {% endcomment %}
                       <!-- Main toolbar -->
-                      <div class="bg-body border rounded-bottom h-300 overflow-hidden" id="quilleditor">
-                      </div>
+                      {% comment %} <div class="bg-body border rounded-bottom h-300 overflow-hidden" id="quilleditor">
+                      </div> {% endcomment %}
                     </div>	
                 </div>
                 <div class="col-12">
@@ -125,8 +125,8 @@ Main contain START -->
                 <div class="col-lg-5">
                   <!-- Message -->
                   <div class="mb-3">
-                    <label class="form-label" id='news_category'>دسته بندی</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <label class="form-label" id='news_categorys'>دسته بندی</label>
+                    <select class="form-select" id='news_category' name='news_category' aria-label="Default select example">
                       {% for category_news in category_news %}
                       <option value="{{category_news.id}}">{{category_news.news_subcategory}}</option>
                       {% endfor %}
@@ -135,9 +135,9 @@ Main contain START -->
                 </div>
                 <div class="col-12">
                   <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="postCheck">
-                    <label class="form-check-label" for="postCheck">
-                      این خبر ویژه شود؟
+                    <input class="form-check-input" type="checkbox" value="" id="important" name="important">
+                    <label class="form-check-label" for="important">
+                      این خبر مهم شود؟
                     </label>
                   </div>
                 </div>
@@ -157,10 +157,10 @@ Main contain START -->
 </section>
 <!-- =======================
 Main contain END -->
-<script>
-  CKEDITOR.replace('newstext');
+{% comment %} <script>
+  CKEDITOR.replace('news_text');
   CKEDITOR.config.skin = 'prestige';
-</script>
+</script> {% endcomment %}
 {% endblock contentmaster %}
 
 {% block ckeditor %}

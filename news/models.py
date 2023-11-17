@@ -16,6 +16,7 @@ class News(models.Model):
     news_category=models.ForeignKey("Category",on_delete=models.CASCADE,related_name="news",null=True , blank=True)
     news_subcategory=models.ForeignKey("SubCategory",on_delete=models.CASCADE,related_name="news",null=True , blank=True)
     slider=models.BooleanField(default=False)
+    important=models.BooleanField(default=False)
 
 
     def __str__(self):

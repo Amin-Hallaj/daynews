@@ -22,8 +22,9 @@ def master_dashboard_post_create_submit(request):
         news_brief=request.POST.get('news_brief')
         news_text=request.POST.get('news_text')
         news_category=request.POST.get('news_category')
+        important=request.POST.get('important') == 'on'
         
-        if news_titel == "" or news_brief == "" or news_text == "" :
+        if news_titel == "" or news_brief == "" or news_text == "" or important == "" :
             messages.error(request, 'لطفا تمامی فیلد ها را پر کنید')
             return redirect("master_dashboard_post_create")
         
@@ -48,6 +49,7 @@ def master_dashboard_post_create_submit(request):
                 picurl=url,
                 news_date=time.time(),
                 news_subcategory=news_category,
+                important=important,
             )
         
     return redirect("master_dashboard_post_list")

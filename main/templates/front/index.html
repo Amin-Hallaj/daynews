@@ -14,7 +14,7 @@ Trending START -->
 				<div class="d-sm-flex align-items-center text-center text-sm-start">
 					<!-- Title -->
 					<div class="me-3">
-						<span class="badge bg-primary p-2 px-3">اخبار امروز:</span>
+						<span class="badge bg-primary p-2 px-3">اخبارهای مهم:</span>
 					</div>
 					<!-- Slider -->
 					<div class="tiny-slider arrow-end arrow-xs arrow-white arrow-round arrow-md-none">
@@ -26,9 +26,9 @@ Trending START -->
 							data-dots="false"
 							data-items="1">
 							<!-- Slider items -->
-							<div> <a href="#" class="text-reset btn-link">افزایش آلودگی هوا در شهرهای پُرجمعیت تا فردا</a></div>
-							<div> <a href="#" class="text-reset btn-link">حضورمسیحیان در حرم سامرابا آغاز سال جدید </a></div>
-							<div> <a href="#" class="text-reset btn-link">انتقاد ستاره رئال از شعارهای نژادپرستانه </a></div>
+							{% for important in important_news %}
+							<div> <a href="{% url 'front_post_single' word=important.title %}" class="text-reset btn-link">{{important.title}}</a></div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
@@ -204,7 +204,7 @@ Main content START -->
 											</div>
 										</div>
 									</li>
-									<li class="nav-item">{{news.news_date}}</li>
+									<li class="nav-item">{{news.jdate}}</li>
 								</ul>
 							</div>
 						</div>
