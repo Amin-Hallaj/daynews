@@ -47,13 +47,7 @@ Post edit START -->
                 </div>
               </div>
               <!-- Post type END -->
-              <!-- Short description -->
-              <div class="col-12">
-                <div class="mb-3">
-                    <label class="form-label">توضیح مختصر </label>
-                    <textarea class="form-control" id="news_brief_edit" name="news_brief_edit" rows="3">{{news_edits.news_brief}}</textarea>
-                </div>
-              </div>
+
               <!-- Main toolbar -->
               <div class="col-md-12">
                 <!-- Subject -->
@@ -61,7 +55,7 @@ Post edit START -->
                   <label class="form-label">متن خبر</label>
                   <textarea class="form-control" id="news_text_edit" name="news_text_edit" rows="3">{{news_edits.news_text}}</textarea>
                   <!-- Editor toolbar -->
-                    <div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
+                    {% comment %} <div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
                       <span class="ql-formats">
                         <select class="ql-size"></select>
                       </span>
@@ -91,10 +85,10 @@ Post edit START -->
                       <span class="ql-formats">
                         <button class="ql-clean"></button>
                       </span>
-                    </div>
+                    </div> {% endcomment %}
                     <!-- Main toolbar -->
-                    <div class="bg-body border rounded-bottom h-300 overflow-hidden" id="quilleditor">
-                    </div>
+                    {% comment %} <div class="bg-body border rounded-bottom h-300 overflow-hidden" id="quilleditor">
+                    </div> {% endcomment %}
                   </div>	
               </div>
                 <div class="col-12 mt-4">

@@ -19,12 +19,11 @@ def master_dashboard_post_create_submit(request):
 
     if request.method=='POST':
         news_titel=request.POST.get('news_titel')
-        news_brief=request.POST.get('news_brief')
         news_text=request.POST.get('news_text')
         news_category=request.POST.get('news_category')
         important=request.POST.get('important') == 'on'
         
-        if news_titel == "" or news_brief == "" or news_text == "" or important == "" :
+        if news_titel == "" or news_text == "" or important == "" :
             messages.error(request, 'لطفا تمامی فیلد ها را پر کنید')
             return redirect("master_dashboard_post_create")
         
@@ -43,7 +42,6 @@ def master_dashboard_post_create_submit(request):
             News.objects.create(
                 writer=request.user,
                 title=news_titel,
-                news_brief=news_brief,
                 news_text=news_text,
                 picname=filename,
                 picurl=url,
@@ -70,10 +68,9 @@ def master_dashboard_post_edit_submit(request,id):
 
     if request.method=='POST':
         title_edit=request.POST.get('title_edit')
-        news_brief_edit=request.POST.get('news_brief_edit')
         news_text_edit=request.POST.get('news_text_edit')
         
-        if title_edit == "" or news_brief_edit == "" or news_text_edit == "" :
+        if title_edit == "" or news_text_edit == "" :
             messages.error(request, 'لطفا تمامی فیلد ها را پر کنید')
             return redirect("master_dashboard_post_edit", id=id)
         
@@ -90,7 +87,6 @@ def master_dashboard_post_edit_submit(request,id):
                 if news_edit.picname is not None and news_edit.picname != "":
                     fss.delete(news_edit.picname)
                 news_edit.title=title_edit
-                news_edit.news_brief=news_brief_edit
                 news_edit.news_text=news_text_edit
                 news_edit.picname=filename
                 news_edit.picurl=url
@@ -101,7 +97,6 @@ def master_dashboard_post_edit_submit(request,id):
             news_edit=News.objects.get(id=id)
 
             news_edit.title=title_edit
-            news_edit.news_brief=news_brief_edit
             news_edit.news_text=news_text_edit
             # news_edit.news_date=time.time(),
             news_edit.save()
